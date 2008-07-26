@@ -60,9 +60,9 @@ function linux(keys)
     end
     new_code = code - 8
     if string.len(syms.normal) == 1 then
-      io.write(string.format("keycode %d = %s\n", new_code, syms.normal))
+      io.write(string.format("keycode %3d = %20s\n", new_code, syms.normal))
     else
-      io.write(string.format("keycode %d = %s %s %s %s\n", new_code, syms.normal,
+      io.write(string.format("keycode %3d = %20s %20s %20s %20s\n", new_code, syms.normal,
        syms.shift, syms.ms, syms.ms_shift))
     end
   end
