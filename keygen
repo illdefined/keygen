@@ -15,5 +15,5 @@ for line in io.lines() do
   end
 end
 
-generator = require "generator/xmodmap"
+generator = require "generator/linux"
 generator(keys)

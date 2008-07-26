@@ -41,7 +41,7 @@ local subst = {
   ["Thorn"] = "VoidSymbol",
 }
 
-function xmodmap(keys)
+function linux(keys)
   io.write("alt_is_meta\n")
   io.write("strings as usual\n")
   io.write("compose as usual\n")
@@ -68,4 +68,4 @@ function xmodmap(keys)
   end
 end
 
-return xmodmap
+return linux
