@@ -9,7 +9,7 @@ end
 output_type = arg[1]
 generator = require("generator/" .. output_type)
 
-pattern = "keycode%s*(%d+)%s*=%s*([%w_]+)%s+([%w_]+)%s+([%w_]+)%s+([%w_]+)%s*"
+pattern = "keycode%s*(%d+)%s*=%s*([%w_]+)%s*([%w_]*)%s*([%w_]*)%s*([%w_]*)%s*"
 
 keys = {}
 
