@@ -1,4 +1,14 @@
 #!/usr/bin/env lua
+
+if not arg[1] then
+  io.stderr:write("Usage: keygen OUTPUT_TYPE < IN_FILE")
+  os.exit(1)
+end
+
+
+output_type = arg[1]
+generator = require("generator/" .. output_type)
+
 pattern = "keycode%s*(%d+)%s*=%s*([%w_]+)%s+([%w_]+)%s+([%w_]+)%s+([%w_]+)%s*"
 
 keys = {}
@@ -15,5 +25,4 @@ for line in io.lines() do
   end
 end
 
-generator = require "generator/linux"
 generator(keys)
