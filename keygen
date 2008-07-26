@@ -1,0 +1,19 @@
+#!/usr/bin/env lua
+pattern = "keycode%s*(%d+)%s*=%s*([%w_]+)%s+([%w_]+)%s+([%w_]+)%s+([%w_]+)%s*"
+
+keys = {}
+
+for line in io.lines() do
+  _, _, code, sym_normal, sym_shift, sym_ms, sym_ms_shift = string.find(line, pattern)
+  if code ~= nil then
+    keys[code] = {
+      normal = sym_normal,
+      shift = sym_shift,
+      ms = sym_ms,
+      ms_shift = sym_ms_shift
+    }
+  end
+end
+
+generator = require "generator/xmodmap"
+generator(keys)
