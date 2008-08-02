@@ -16,7 +16,7 @@ keys = {}
 for line in io.lines() do
   _, _, code, sym_normal, sym_shift, sym_ms, sym_ms_shift = string.find(line, pattern)
   if code ~= nil then
-    keys[code] = {
+    keys[tonumber(code)] = {
       normal = sym_normal,
       shift = sym_shift,
       ms = sym_ms,
